@@ -21,7 +21,6 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('citas/', include('citas.urls')),
-    path('', RedirectView.as_view(url='/citas/')),  # redirige la raíz a /citas/
+    path('', RedirectView.as_view(url='/citas/', permanent=False)),  # opcional, redirige la raíz
 ]
-
 

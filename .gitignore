@@ -1,0 +1,16 @@
+venv/
+
+*.pyc
+__pycache__/
+
+db.sqlite3
+
+*/migrations/*.pyc
+*/migrations/__pycache__/
+
+.vscode/
+
+*.log
+
+.DS_Store
+Thumbs.db

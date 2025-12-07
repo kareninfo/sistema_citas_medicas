@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'citas',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -52,13 +53,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'citasmedicas.urls'
 
+import os
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates'],  # Carpeta global de templates
+        'APP_DIRS': True,  # Esto permite que busque templates dentro de cada app
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -66,6 +70,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'citasmedicas.wsgi.application'
 
